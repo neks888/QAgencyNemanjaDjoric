@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Comments from "./Comments";
 
 function PostDetails() {
   const { id } = useParams();
@@ -20,6 +21,8 @@ function PostDetails() {
       <h2>{postDetails.title}</h2>
       <p>{postDetails.body}</p>
       {/* Display comments here */}
+      <div>Komentari</div>
+      <Comments id={id} />
     </div>
   );
 }

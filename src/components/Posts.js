@@ -23,13 +23,14 @@ function Posts() {
   return (
     <div>
       <input
+        className="input-search"
         type="text"
         placeholder="Search by user name..."
         value={searchQuery}
         onChange={handleSearchChange}
       />
       {filteredPosts.map((post) => (
-        <div key={post.id}>
+        <div className="card" key={post.id}>
           <h2>{post.title}</h2>
           <p>{post.body}</p>
           {/* Link to post details */}
