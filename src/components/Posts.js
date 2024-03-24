@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import useLogger from "./CustomHook";
+import PropTypes from "prop-types";
 
-function Posts() {
+function Posts({ message, name }) {
   const [posts, setPosts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  useLogger(message, name);
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/posts")
@@ -40,5 +43,9 @@ function Posts() {
     </div>
   );
 }
+Posts.propTypes = {
+  message: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
 
 export default Posts;

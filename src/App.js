@@ -6,13 +6,21 @@ import PostDetails from "./components/PostDetails";
 import Navbar from "./components/Navbar";
 
 function App() {
+  const message = "Hello from";
   return (
     <React.Fragment>
       <Router>
-        <Navbar />
+        <Navbar message={message} name={`Navbar`} />
         <Routes>
-          <Route path="/posts" element={<Posts />} />
-          <Route path="/post/:id" element={<PostDetails />} />
+          <Route path="/" element={<h1>Hi, Welcome to the app</h1>} />
+          <Route
+            path="/posts"
+            element={<Posts message={message} name="Posts" />}
+          />
+          <Route
+            path="/post/:id"
+            element={<PostDetails message={message} name="PostDetails" />}
+          />
         </Routes>
       </Router>
     </React.Fragment>

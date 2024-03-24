@@ -40,6 +40,21 @@
 body {
   padding: 3rem;
 }
+/************************************************************** Styles for Links ********************************* */
+ul {
+  list-style-type: none;
+  justify-content: space-between;
+}
+.link-home {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.link-posts {
+  text-decoration: none;
+  color: black;
+}
 /* 
 ************************************************************** Styles for Post Component ********************************* */
 .card {
